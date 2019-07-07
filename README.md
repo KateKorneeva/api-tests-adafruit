@@ -4,9 +4,10 @@ I chose Adafruit API as an object of testing - simply because it is public and I
 Docs for API can be found here https://io.adafruit.com/api/docs
 
 To run tests, do
-
+```
 npm i
 npm test
+```
 
 That will run all files in test directory, except files in /helpers/ dir.
 Tests run concurrently, except tests that are marked with .serial modifier
