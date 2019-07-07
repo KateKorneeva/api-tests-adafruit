@@ -1,0 +1,217 @@
+{
+    "type": "object",
+    "title": "The Create Feed Schema",
+    "required": [
+        "username",
+        "owner",
+        "id",
+        "name",
+        "description",
+        "license",
+        "history",
+        "enabled",
+        "visibility",
+        "unit_type",
+        "unit_symbol",
+        "last_value",
+        "created_at",
+        "updated_at",
+        "status_notify",
+        "status_timeout",
+        "status",
+        "key",
+        "group",
+        "groups",
+        "feed_webhook_receivers",
+        "feed_status_changes"
+    ],
+    "properties": {
+        "username": {
+            "$id": "#/properties/username",
+            "type": "string"
+        },
+        "owner": {
+            "$id": "#/properties/owner",
+            "type": "object",
+            "required": [
+                "id",
+                "username"
+            ],
+            "properties": {
+                "id": {
+                    "$id": "#/properties/owner/properties/id",
+                    "type": "integer"
+                },
+                "username": {
+                    "$id": "#/properties/owner/properties/username",
+                    "type": "string"
+                }
+            }
+        },
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer"
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string"
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string"
+        },
+        "license": {
+            "$id": "#/properties/license",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "history": {
+            "$id": "#/properties/history",
+            "type": "boolean"
+        },
+        "enabled": {
+            "$id": "#/properties/enabled",
+            "type": "boolean"
+        },
+        "visibility": {
+            "$id": "#/properties/visibility",
+            "type": "string",
+            "enum": [
+                "private",
+                "public"
+            ]
+        },
+        "unit_type": {
+            "$id": "#/properties/unit_type",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "unit_symbol": {
+            "$id": "#/properties/unit_symbol",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "last_value": {
+            "$id": "#/properties/last_value",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "created_at": {
+            "$id": "#/properties/created_at",
+            "type": "string",
+            "examples": [
+                "2019-06-18T13:22:00Z"
+            ],
+            "pattern": "\\d\\d\\d\\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])T(00|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])Z"
+        },
+        "updated_at": {
+            "$id": "#/properties/updated_at",
+            "type": "string",
+            "examples": [
+                "2019-06-18T13:22:00Z"
+            ],
+            "pattern": "\\d\\d\\d\\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])T(00|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])Z"
+        },
+        "status_notify": {
+            "$id": "#/properties/status_notify",
+            "type": "boolean"
+        },
+        "status_timeout": {
+            "$id": "#/properties/status_timeout",
+            "type": "integer"
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": "string",
+            "enum": [
+                "online",
+                "offline"
+            ]
+        },
+        "key": {
+            "$id": "#/properties/key",
+            "type": "string"
+        },
+        "group": {
+            "$id": "#/properties/group",
+            "type": "object",
+            "required": [
+                "id",
+                "key",
+                "name",
+                "user_id"
+            ],
+            "properties": {
+                "id": {
+                    "$id": "#/properties/group/properties/id",
+                    "type": "integer"
+                },
+                "key": {
+                    "$id": "#/properties/group/properties/key",
+                    "type": "string"
+                },
+                "name": {
+                    "$id": "#/properties/group/properties/name",
+                    "type": "string"
+                },
+                "user_id": {
+                    "$id": "#/properties/group/properties/user_id",
+                    "type": "integer"
+                }
+            }
+        },
+        "groups": {
+            "$id": "#/properties/groups",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "key",
+                    "name",
+                    "user_id"
+                ],
+                "properties": {
+                    "id": {
+                        "$id": "#/properties/groups/items/properties/id",
+                        "type": "integer"
+                    },
+                    "key": {
+                        "$id": "#/properties/groups/items/properties/key",
+                        "type": "string"
+                    },
+                    "name": {
+                        "$id": "#/properties/groups/items/properties/name",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "$id": "#/properties/groups/items/properties/user_id",
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "feed_webhook_receivers": {
+            "$id": "#/properties/feed_webhook_receivers",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "feed_status_changes": {
+            "$id": "#/properties/feed_status_changes",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
